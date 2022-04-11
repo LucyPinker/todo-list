@@ -8,7 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World'
   @Output() submit: EventEmitter<string> = new EventEmitter<string>();
-  
+  value: any;
+
   constructor() {
   }
 
@@ -18,4 +19,5 @@ export class InputButtonUnitComponent implements OnInit {
   submitValue(newTitle: string) {
     this.submit.emit(newTitle);
   }
+
 }
