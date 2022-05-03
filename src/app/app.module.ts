@@ -5,18 +5,23 @@ import { AppComponent } from './app.component';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ListManagerComponent } from './list-manager/list-manager.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     InputButtonUnitComponent,
     TodoItemComponent,
-    ListManagerComponent
+    ListManagerComponent,
+    CourseDialogComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CourseDialogComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

@@ -128,12 +128,21 @@
     ora "5.4.1"
     rxjs "6.6.7"
 
-"@angular/animations@~13.3.0":
-  version "13.3.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-13.3.1.tgz#58ae68f5ee6118687dc6d8da055472a94b1eade2"
-  integrity sha512-O6DVOk++Bz8Bcz2AAnd1wz1OFzsy3XjmA4o1Mx+DNLRwrLvWHuq33rTVs0Pur7psiKz1lym9kMrY9YwE3s0SJA==
+"@angular/animations@^13.3.5":
+  version "13.3.5"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-13.3.5.tgz#96f2786c571e22c7a45cd97eae242a24bd03b5b5"
+  integrity sha512-BYXX80N1hxkATWqv2IZddfKvqxomktxH5fREv+KjwIYFkyK9KBnRBILqynyIJaXXut5KE6QNOf1zWEZxdOnc3A==
   dependencies:
     tslib "^2.3.0"
+
+"@angular/cdk@^13.3.5":
+  version "13.3.5"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-13.3.5.tgz#b198bcd062d46eb55e9e012cfab8b0a3457d2c23"
+  integrity sha512-fA99fGgybup9ezyB/IzOa9Mk8g8LjejkqikLnC3mAeQ0lROOO7Vf9Rp1v7/ahe2lALTUbA1bzJeXzQYaffkIiA==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~13.3.1":
   version "13.3.1"
@@ -201,6 +210,13 @@
   version "13.3.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-13.3.1.tgz#2ae8882eab248292d9a9c288dcce1b5d721455ed"
   integrity sha512-S6a/CEq1ht0vw2epuESiO551dsyLQTb/HuwceIBlsX2JqRRccynYlyx92gsDAo4hD2F0q+EeqZEPuq3oQIK43A==
+  dependencies:
+    tslib "^2.3.0"
+
+"@angular/material@^13.3.5":
+  version "13.3.5"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-13.3.5.tgz#d2e5f90edaa35eeb1e09925692f04acc6b082bae"
+  integrity sha512-4+FCb6Tbre5SwhZRKfnuh8K+/o+DuCGisJOuk7lxdFKDGDPjsPDWYVrBDal1N70mO09z/ApwNjpsIjuRv79wpg==
   dependencies:
     tslib "^2.3.0"
 
@@ -4775,6 +4791,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha512-kXX+5S81lgESA0LsDuGjAlBybImAChYRMT+/uKCEXFBFOeEhS52qUCydGhU3qLRD8D9DVjaUo821WK7DM4iCeg==
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parse5@^6.0.1:
   version "6.0.1"
