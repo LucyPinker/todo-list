@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +23,9 @@ export class AppComponent {
       title: 'Angular For Beginners'
     };
 
-    this.dialog.open(CourseDialogComponent, dialogConfig);
+    this.dialog.open(TaskDialogComponent, dialogConfig);
 
-    const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(TaskDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
       data => console.log("Dialog output:", data)

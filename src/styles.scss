@@ -14,7 +14,7 @@ li {
 }
 
 body {
-  background: #f1f1f1;
+  background: #FFD791;
   font-size: 16px;
   line-height: 22px;
   color: #404040;
@@ -43,12 +43,13 @@ ul {
   background: lightslategrey;
 }
 
-.btn-red {
-  background: red;
+.material-symbols-outlined {
+  color: #772F1A;
+  cursor: pointer;
 }
 
-.btn-red:hover {
-  background: darkred;
+.material-symbols-outlined:hover {
+  color: darkred;
 }
 
 .app-title {

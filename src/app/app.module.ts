@@ -6,10 +6,11 @@ import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ListManagerComponent } from './list-manager/list-manager.component';
 import { MatDialogModule } from "@angular/material/dialog";
-import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     InputButtonUnitComponent,
     TodoItemComponent,
     ListManagerComponent,
-    CourseDialogComponent
+    TaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,10 +27,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CourseDialogComponent]
+  entryComponents: [TaskDialogComponent]
 })
 export class AppModule {
  }
