@@ -1,6 +1,9 @@
 <div class="todo-app">
-<app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
+    <button class="btn-dialog" (click)="openDialog()">
+      Add a new task
+    </button>
 <ul>
+
   <li *ngFor="let todoItem of todoList">
     <app-todo-item [item]="todoItem"
                    (remove)="removeItem($event)"

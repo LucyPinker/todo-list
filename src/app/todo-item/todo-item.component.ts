@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
+import { MatDialog} from "@angular/material/dialog";
+import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 
 @Component({
   selector: 'app-todo-item',
@@ -10,8 +12,9 @@ export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
-  
-  constructor() { }
+
+  constructor(
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +29,21 @@ export class TodoItemComponent implements OnInit {
   removeItem(): void {
     this.remove.emit(this.item);
   }
+
+  updateItem(): void {
+    this.update.emit({
+      item: this.item,
+      changes: { title: "pizza" }
+    });
+  }
+
+  openDialog() {
+    this.dialog.open(TaskDialogComponent, {
+      data: {
+        name: this.item.title,
+      },
+    });
+  }
+
 
 }

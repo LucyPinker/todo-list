@@ -1,6 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { TodoListService } from '../services/todo-list.service';
+
 
 @Component({
   selector: 'app-task-dialog',
@@ -9,15 +11,19 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 })
 export class TaskDialogComponent implements OnInit {
 
+
   form: FormGroup;
   description: string;
+
+  @Output() submit: EventEmitter<string> = new EventEmitter<string>();
+  @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<TaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) data) {
+    private todoListService: TodoListService,
+    @Inject(MAT_DIALOG_DATA) public data: { name: string }) {
 
-    this.description = data.description;
     }
 
   ngOnInit() {
@@ -26,11 +32,20 @@ export class TaskDialogComponent implements OnInit {
     });
   }
 
-  save() {
-    this.dialogRef.close(this.form.value);
-  }
-
   close() {
     this.dialogRef.close();
   }
+
+  submitValue(newTitle: string) {
+    this.submit.emit(newTitle);
+  }
+
+  addItem(title: string): void {
+    this.todoListService.addItem({ title });
+  }
+
+  updateItem( title: string, changes ): void {
+    this.todoListService.updateItem({ title }, changes)
+  }
+
 }

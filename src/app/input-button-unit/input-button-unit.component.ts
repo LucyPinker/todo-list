@@ -21,4 +21,8 @@ export class InputButtonUnitComponent implements OnInit {
     this.submit.emit(newTitle);
   }
 
+
 }
+
+//on click, use the id of the list item to populate the dialog box with the title
+//on update save the new title

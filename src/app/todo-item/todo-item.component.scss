@@ -5,6 +5,13 @@
   line-height: 30px;
   display: flex;
   justify-content: space-between;
+  color: white;
+  cursor: pointer;
+
+  :hover {
+    color: black;
+    transition-delay: 0.2s;
+  }
 }
 
 .todo-checkbox {
@@ -15,7 +22,7 @@
 .todo-title {
   flex-grow: 1;
   padding-left: 11px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 20px;
   font-weight: bold;
 }

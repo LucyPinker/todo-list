@@ -1,18 +1,20 @@
 <div class="todo-item">
-<div>
-  <input type="checkbox"
-         class="todo-checkbox"
-         (click)="completeItem()"
-         [checked]="item.completed" />
-    <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
-    {{ item.title }}
-    </span>
-</div>
+  <div>
+    <input type="checkbox"
+          class="todo-checkbox"
+          (click)="completeItem()"
+          [checked]="item.completed" />
+      <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
+      {{ item.title }}
+      </span>
+  </div>
 
+  <span class="material-symbols-outlined" (click)="removeItem()">
+    delete_forever
+  </span>
 
-    <span class="material-symbols-outlined" (click)="removeItem()">
-      delete_forever
-    </span>
-
+  <span class="material-symbols-outlined" (click)="updateItem()">
+    add_circle
+  </span>
 
 </div>
