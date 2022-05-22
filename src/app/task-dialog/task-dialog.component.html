@@ -2,10 +2,10 @@
 <mat-dialog-content class="dialog" [formGroup]="form">
   <h2 mat-dialog-title>{{ data.name }}</h2>
 
-    <app-input-button-unit (submit)="addItem($event); close()" ></app-input-button-unit>
+  <app-input-button-unit (submit)="addItem($event); close()"></app-input-button-unit>
 
-    <mat-dialog-actions>
-      <button class="mat-raised-button" (click)="close()">Close</button>
-    </mat-dialog-actions>
+  <mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+  </mat-dialog-actions>
 
 </mat-dialog-content>

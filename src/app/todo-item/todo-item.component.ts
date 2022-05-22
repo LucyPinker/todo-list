@@ -13,10 +13,14 @@ export class TodoItemComponent implements OnInit {
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
+
   constructor(
-    private dialog: MatDialog) { }
+    private dialog: MatDialog) {
+
+    }
 
   ngOnInit(): void {
+
   }
 
   completeItem(): void {
@@ -37,11 +41,16 @@ export class TodoItemComponent implements OnInit {
     });
   }
 
+
+
+
+
   openDialog() {
     this.dialog.open(TaskDialogComponent, {
       data: {
         name: this.item.title,
       },
+
     });
   }
 

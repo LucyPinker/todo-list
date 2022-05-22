@@ -5,7 +5,7 @@ import { StorageService } from './storage.service';
 const todoListStorageKey = 'Todo_List';
 
 const defaultTodoList: TodoItem[] = [
-  { title: 'install NodeJS' },
+  { title: 'install NodeJS'},
   { title: 'install Angular CLI' },
   { title: 'create new app' },
   { title: 'serve app' },
@@ -19,6 +19,7 @@ const defaultTodoList: TodoItem[] = [
 
 export class TodoListService {
   todoList: TodoItem[];
+
 
   constructor(private storageService: StorageService) {
     this.todoList =
@@ -49,5 +50,4 @@ export class TodoListService {
   getTodoList(): TodoItem[] {
     return this.todoList;
   }
-
 }

@@ -12,9 +12,11 @@ import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 export class ListManagerComponent implements OnInit {
   todoList: TodoItem[];
 
+
   constructor(
     private todoListService: TodoListService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog) {
+         }
 
   ngOnInit() {
     this.todoList = this.todoListService.getTodoList();
@@ -31,6 +33,12 @@ export class ListManagerComponent implements OnInit {
   updateItem(item, changes): void {
     this.todoListService.updateItem(item, changes);
   }
+
+  completeItems() {
+    return this.todoList.filter(item => item.completed === true).length
+  }
+
+
 
   openDialog() {
     /*const dialogConfig = new MatDialogConfig();
@@ -49,7 +57,8 @@ export class ListManagerComponent implements OnInit {
     // disableClose: true
     };
 
-
   }
+
+
 
 }
