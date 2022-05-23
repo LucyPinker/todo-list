@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
-import { MatDialog} from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-item',
@@ -12,10 +13,12 @@ export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
+  @Input("edit") edit: boolean = true;
 
 
   constructor(
-    private dialog: MatDialog) {
+    private dialog: MatDialog,
+    public router: Router ) {
 
     }
 
@@ -34,24 +37,39 @@ export class TodoItemComponent implements OnInit {
     this.remove.emit(this.item);
   }
 
-  updateItem(): void {
+  updateItem(data): void {
     this.update.emit({
       item: this.item,
-      changes: { title: "pizza" }
+      changes: { title: data }
     });
   }
 
-
-
-
-
   openDialog() {
-    this.dialog.open(TaskDialogComponent, {
-      data: {
-        name: this.item.title,
-      },
+    const dialogConfig = new MatDialogConfig();
 
-    });
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.closeOnNavigation = true;
+
+
+    dialogConfig.data = {
+      item: this.item
+    };
+
+
+    dialogConfig.position = {
+      'top': '0',
+      left: '0'
+    };
+
+    if (this.dialog.openDialogs.length == 0) {
+      const dialogRef = this.dialog.open(TaskDialogComponent, dialogConfig);
+      // disableClose: true
+     dialogRef.afterClosed().subscribe(
+      data => this.updateItem(data.description)
+    );
+    };
   }
 
 

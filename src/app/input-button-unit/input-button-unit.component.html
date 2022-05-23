@@ -1,6 +1,7 @@
 <input class="todo-input" #inputElementRef
        [value]=""
-       (keyup.enter)="submitValue($event.target.value); inputElementRef.value=' '">
+       (keyup.enter)="submitValue($event.target.value); inputElementRef.value=' '"
+       placeholder="task title">
 
 <button class="btn" (click)="submitValue(inputElementRef.value); inputElementRef.value=' '" >
   Save

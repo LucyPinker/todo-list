@@ -1,5 +1,5 @@
 <div class="todo-app">
-    <button class="btn-dialog" (click)="openDialog()">
+    <button class="btn-dialog"  (click)="openDialog()">
       Add a new task
     </button>
 <ul>
@@ -12,7 +12,7 @@
   </li>
 </ul>
 
-  <h2 class="task-counter" >Completed tasks: {{ completeItems() }} </h2>
+  <h2 *ngIf="router.url === '/dashboard'" class="task-counter" >Completed tasks: {{ completeItems() }} </h2>
 
 
 </div>

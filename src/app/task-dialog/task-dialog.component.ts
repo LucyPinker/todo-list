@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material/dialog";
 import { TodoListService } from '../services/todo-list.service';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class TaskDialogComponent implements OnInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<TaskDialogComponent>,
     private todoListService: TodoListService,
-    @Inject(MAT_DIALOG_DATA) public data: { name: string }) {
+    @Inject(MAT_DIALOG_DATA) data) {
 
     }
 
@@ -47,5 +48,10 @@ export class TaskDialogComponent implements OnInit {
   updateItem( title: string, changes ): void {
     this.todoListService.updateItem({ title }, changes)
   }
+
+  save() {
+    this.dialogRef.close(this.form.value);
+  }
+
 
 }

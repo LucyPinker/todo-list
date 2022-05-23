@@ -3,7 +3,8 @@
     <input type="checkbox"
           class="todo-checkbox"
           (click)="completeItem()"
-          [checked]="item.completed" />
+          [checked]="item.completed"
+          [contentEditable]="edit" />
       <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
       {{ item.title }}
       </span>
@@ -13,8 +14,8 @@
     delete_forever
   </span>
 
-  <span class="material-symbols-outlined" (click)="openDialog()">
-    add_circle
+  <span *ngIf="router.url === '/admin'" class="material-symbols-outlined" (click)="openDialog()">
+    edit
   </span>
 
 </div>

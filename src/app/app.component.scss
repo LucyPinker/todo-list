@@ -2,3 +2,26 @@ h1 {
   color: black;
   font-family: 'Work Sans', sans-serif;
 }
+
+.route{
+  color: white;
+  background-color: #028EC8;
+  padding: 10px;
+  margin: 20px;
+  font-size: 20px !important;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+  display: block;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 24px;
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+
+}
+
+ul{
+  display: flex;
+  margin-left: 42%;
+}
