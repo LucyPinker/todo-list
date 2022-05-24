@@ -4,14 +4,13 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material/dial
 import { TodoListService } from '../services/todo-list.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-task-dialog',
   templateUrl: './task-dialog.component.html',
   styleUrls: ['./task-dialog.component.scss']
 })
 export class TaskDialogComponent implements OnInit {
-
-
   form: FormGroup;
   description: string;
 
@@ -53,5 +52,6 @@ export class TaskDialogComponent implements OnInit {
     this.dialogRef.close(this.form.value);
   }
 
+  
 
 }

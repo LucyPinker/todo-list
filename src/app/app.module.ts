@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { OverlayModule } from '@angular/cdk/overlay';
 import { AppComponent } from './app.component';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
@@ -14,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { OverlayComponent } from './overlay/overlay.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { OverlayComponent } from './overlay/overlay.component';
     TodoItemComponent,
     ListManagerComponent,
     TaskDialogComponent,
-    DashboardComponent,
-    OverlayComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

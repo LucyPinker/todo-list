@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 import { TodoListService } from '../services/todo-list.service';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 import { Router } from '@angular/router';
+import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'app-list-manager',
@@ -17,7 +19,9 @@ export class ListManagerComponent implements OnInit {
   constructor(
     private todoListService: TodoListService,
     private dialog: MatDialog,
-    public router: Router) {}
+    public router: Router,
+    private overlay: Overlay,
+    private viewContainerRef: ViewContainerRef,) {}
 
   ngOnInit() {
     this.todoList = this.todoListService.getTodoList();
@@ -39,9 +43,24 @@ export class ListManagerComponent implements OnInit {
     return this.todoList.filter(item => item.completed === true).length
   }
 
+  openOverlay() {
+    const configs = new OverlayConfig({
+      hasBackdrop: true,
+      panelClass: ['modal', 'is-active'],
+    });
+
+    const overlayRef = this.overlay.create(configs);
+
+    overlayRef.attach(
+      new ComponentPortal(TaskDialogComponent, this.viewContainerRef)
+    );
+  }
+
 
 
   openDialog() {
+
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
