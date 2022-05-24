@@ -1,13 +1,16 @@
 
 <mat-dialog-content class="dialog" [formGroup]="form">
+  <span class="material-symbols-outlined" (click)="close()">
+    disabled_by_default
+  </span>
+
   <h2 mat-dialog-title> Add a new task</h2>
 
-  <app-input-button-unit  (submit)="addItem($event); close()"></app-input-button-unit>
+  <app-input-button-unit *ngIf="router.url === '/admin'" (submit)="addItem($event); close()"></app-input-button-unit>
 
-  <input matInput placeholder="Course Description" formControlName="description">
+  <input *ngIf="router.url === '/dashboard'" matInput placeholder="Course Description" formControlName="description">
 
   <mat-dialog-actions>
-    <button class="mat-raised-button" (click)="close()">Close</button>
     <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
   </mat-dialog-actions>
 

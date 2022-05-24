@@ -1,5 +1,5 @@
 <div class="todo-app">
-    <button class="btn-dialog"  (click)="openDialog()">
+    <button *ngIf="router.url === '/dashboard'" class="btn-dialog"  (click)="openDialog()">
       Add a new task
     </button>
 <ul>

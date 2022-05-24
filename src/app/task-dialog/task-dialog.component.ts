@@ -2,8 +2,7 @@ import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from "@angular/material/dialog";
 import { TodoListService } from '../services/todo-list.service';
-import { TodoItemComponent } from '../todo-item/todo-item.component';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-dialog',
@@ -23,6 +22,7 @@ export class TaskDialogComponent implements OnInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<TaskDialogComponent>,
     private todoListService: TodoListService,
+    public router: Router,
     @Inject(MAT_DIALOG_DATA) data) {
 
     }

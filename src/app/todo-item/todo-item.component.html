@@ -10,7 +10,7 @@
       </span>
   </div>
 
-  <span class="material-symbols-outlined" (click)="removeItem()">
+  <span *ngIf="router.url === '/dashboard'"class="material-symbols-outlined" (click)="removeItem()">
     delete_forever
   </span>
 
