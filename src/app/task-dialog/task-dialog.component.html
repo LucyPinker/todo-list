@@ -1,17 +1,18 @@
 
 <mat-dialog-content class="dialog" [formGroup]="form">
-  <span class="material-symbols-outlined" (click)="close()">
+  <span class="material-symbols-outlined" id="close-icon" (click)="close()">
     disabled_by_default
   </span>
 
-  <h2 mat-dialog-title> Add a new task</h2>
+  <h2 *ngIf="router.url === '/dashboard'; else elseBlock" mat-dialog-title> Add a new task</h2>
+  <ng-template #elseBlock><h2>{{data.item.title}}</h2></ng-template>
 
-  <app-input-button-unit *ngIf="router.url === '/admin'" (submit)="addItem($event); close()"></app-input-button-unit>
+  <app-input-button-unit *ngIf="router.url === '/dashboard'" (submit)="addItem($event); close()"></app-input-button-unit>
 
-  <input *ngIf="router.url === '/dashboard'" matInput placeholder="Course Description" formControlName="description">
+  <input *ngIf="router.url === '/admin'" class="edit-input" matInput placeholder="new task title" formControlName="description" (keyup.enter)="save()">
 
   <mat-dialog-actions>
-    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    <button *ngIf="router.url === '/admin'" class="btn" (click)="save()">Save</button>
   </mat-dialog-actions>
 
 </mat-dialog-content>

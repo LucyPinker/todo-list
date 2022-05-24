@@ -23,7 +23,7 @@ export class TaskDialogComponent implements OnInit {
     private dialogRef: MatDialogRef<TaskDialogComponent>,
     private todoListService: TodoListService,
     public router: Router,
-    @Inject(MAT_DIALOG_DATA) data) {
+    @Inject(MAT_DIALOG_DATA) public data: { item: string }) {
 
     }
 
