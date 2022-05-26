@@ -13,7 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent],

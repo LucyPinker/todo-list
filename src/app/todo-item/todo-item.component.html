@@ -3,8 +3,7 @@
     <input type="checkbox"
           class="todo-checkbox"
           (click)="completeItem()"
-          [checked]="item.completed"
-          [contentEditable]="edit" />
+          [checked]="item.completed"/>
       <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
       {{ item.title }}
       </span>

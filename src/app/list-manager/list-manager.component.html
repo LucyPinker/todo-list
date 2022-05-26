@@ -1,18 +1,14 @@
 <div class="todo-app">
-    <button *ngIf="router.url === '/dashboard'" class="btn-dialog"  (click)="openDialog(); openOverlay()">
-      Add a new task
-    </button>
-<ul>
-
-  <li *ngFor="let todoItem of todoList">
-    <app-todo-item [item]="todoItem"
-                   (remove)="removeItem($event)"
-                   (update)="updateItem($event.item, $event.changes)">
-    </app-todo-item>
-  </li>
-</ul>
-
+  <button *ngIf="router.url === '/dashboard'" class="btn-dialog"  (click)="openDialog()">
+    Add a new task
+  </button>
+    <ul>
+      <li *ngFor="let todoItem of todoList">
+        <app-todo-item [item]="todoItem"
+                      (remove)="removeItem($event)"
+                      (update)="updateItem($event.item, $event.changes)">
+        </app-todo-item>
+      </li>
+    </ul>
   <h2 *ngIf="router.url === '/dashboard'" class="task-counter" >Completed tasks: {{ completeItems() }} </h2>
-
-
 </div>
